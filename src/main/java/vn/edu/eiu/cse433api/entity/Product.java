@@ -11,6 +11,8 @@ public class Product {
     @Column
     private String name;
     @Column
+    private String category;
+    @Column
     private double price;
     @Column
     private String image;
@@ -20,14 +22,14 @@ public class Product {
     public Product() {
     }
 
-    public Product(int id, String name, double price, String image, String description) {
+    public Product(int id, String name, String category, double price, String image, String description) {
         this.id = id;
         this.name = name;
+        this.category = category;
         this.price = price;
         this.image = image;
         this.description = description;
     }
-
 
     public int getId() {
         return id;
@@ -69,11 +71,20 @@ public class Product {
         this.description = description;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", Category='" + category + '\'' +
                 ", price=" + price +
                 ", image='" + image + '\'' +
                 ", description='" + description + '\'' +
